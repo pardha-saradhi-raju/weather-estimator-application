@@ -1,5 +1,3 @@
-
-/* General Reset and Box-Sizing */
 *,
 *::before,
 *::after {
@@ -9,97 +7,72 @@
     font-family: "Merriweather Sans", sans-serif;
 }
 
-/* Root Colors for Theme Consistency */
 :root {
-    --colorDark1: #102d46; /* Updated for a richer dark shade */
-    --colorDark2: #3c6fb0; /* Updated for smoother gradient transition */
-    --colorLight1: #e0e6ef; /* Slightly brighter for contrast */
-    --colorLight2: #f9f9f9;
+    --colorDark1: #112d4e;
+    --colorDark2: #3f72af;
+    --colorLight1: #dbe2ef;
+    --colorLight2: #f9f7f7;
 }
 
-/* Main Wrapper - Full Screen, Centered Content */
 .wrapper {
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
     color: var(--colorLight2);
-    background-color: var(--colorDark1);
-    background-image: linear-gradient(160deg, var(--colorDark1) 0%, var(--colorDark2) 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    background-color: #112d4e;
+    background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);
 }
 
-/* Heading and Tab Styling */
+/* Heading and Tab Container 
+ */
 h1 {
     text-align: center;
     text-transform: uppercase;
     word-spacing: 2px;
-    letter-spacing: 2px;
+    letter-spacing: 1.75px;
     margin-block: 2rem;
-    color: var(--colorLight1);
 }
 
-/* Tab Container - Flexible Layout with Space Between */
 .tabContainer {
     width: 90%;
-    max-width: 600px;
+    max-width: 550px;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
     margin-top: 2rem;
 }
 
-/* Individual Tab Styles - Hover and Active State */
 .tab {
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.875rem;
     letter-spacing: 1.75px;
-    padding: 8px 12px;
+    padding: 5px 8px;
     text-transform: capitalize;
-    color: var(--colorLight2);
-    transition: background-color 0.3s ease, transform 0.2s;
+    /* font-weight: 600; */
 }
 
 .tab.currentTab {
-    background-color: rgba(219, 226, 239, 0.6);
-    border-radius: 6px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 4px;
 }
 
-.tab:hover {
-    background-color: var(--colorLight1);
-    color: var(--colorDark1);
-    transform: scale(1.05);
-}
+/* Tab Container Ends */
 
-/* Main Content Container */
+/* Main Container */
 .container {
     margin-block: 4rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
 }
 
-/* Button Styling - Consistent, Hoverable */
 .btn {
     all: unset;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    padding: 10px 35px;
-    border-radius: 6px;
+    padding: 10px 30px;
+    border-radius: 5px;
     cursor: pointer;
     background-color: var(--colorDark2);
-    color: var(--colorLight2);
-    transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-    background-color: var(--colorLight1);
-    color: var(--colorDark1);
-}
-
-/* Sub-Container - Centered Content */
 .subContainer {
     width: 90%;
     max-width: 1000px;
@@ -109,20 +82,20 @@ h1 {
     align-items: center;
 }
 
-/* Form Container - Flexible Layout */
+/* Form Container */
 .formContainer {
     width: 90%;
     max-width: 550px;
     margin: 0 auto;
     margin-bottom: 2rem;
-    display: none; /* Initially hidden */
+    display: none;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 0 10px;
 }
 
 .formContainer.active {
-    display: flex; /* Displayed when active */
+    display: flex;
 }
 
 .formContainer input {
@@ -130,9 +103,8 @@ h1 {
     width: calc(100% - 80px);
     height: 40px;
     padding: 0 20px;
-    background-color: rgba(219, 226, 239, 0.7);
+    background-color: rgba(219, 226, 239, 0.5);
     border-radius: 10px;
-    color: var(--colorDark1);
 }
 
 .formContainer input:focus {
@@ -140,33 +112,34 @@ h1 {
 }
 
 .formContainer input::placeholder {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.7);
 }
 
-/* Button within Form Container */
 .formContainer .btn {
     width: 40px;
     height: 40px;
+    /* display: grid;
+    place-items: center; */
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
+    padding: unset;
+    border-radius: 100%;
 }
 
-.formContainer .btn img {
+.form-container .btn img {
     object-fit: contain;
 }
 
-/* Grant Location Container - Styled for Centered Text & Images */
+/* Form Container End */
+
+/* grant Location  */
 .grantLocationContainer {
     display: none;
 }
 
 .grantLocationContainer.active {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: var(--colorLight1);
 }
 
 .grantLocationContainer img {
@@ -180,7 +153,7 @@ h1 {
 }
 
 .grantLocationContainer p:last-of-type {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-align: center;
     margin-top: 0.75rem;
     margin-bottom: 1.75rem;
@@ -188,7 +161,8 @@ h1 {
     letter-spacing: 0.75px;
 }
 
-/* Loading Container */
+/* Grant Location End  */
+
 .loadingContainer {
     display: none;
 }
@@ -199,19 +173,14 @@ h1 {
 
 .loadingContainer p {
     text-transform: uppercase;
-    color: var(--colorLight1);
 }
 
-/* User Info Container */
 .userInfoContainer {
     display: none;
 }
 
 .userInfoContainer.active {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: var(--colorLight1);
 }
 
 .userInfoContainer p {
@@ -227,7 +196,7 @@ h1 {
 .name {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0 0.5rem;
     margin-bottom: 0.7rem;
 }
 
@@ -247,33 +216,31 @@ h1 {
     font-size: 1.2rem;
 }
 
-/* Parameters Section - Flexible Display for Weather Data */
 .parameterContainer {
     width: 90%;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 10px 20px;
     margin: 1.6rem auto 0;
     flex-wrap: wrap;
 }
 
 .parameter {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     background-color: rgba(219, 226, 239, 0.5);
-    padding: 1rem;
+    padding: 0.8rem;
     border-radius: 5px;
     width: 30%;
     max-width: 200px;
-    gap: 5px;
-    color: var(--colorDark1);
+    gap: 5px 0;
 }
 
 .parameter p {
     font-size: 1rem;
-    font-weight: 600;
+    font-size: 600;
     text-transform: uppercase;
 }
 
@@ -288,17 +255,13 @@ h1 {
     font-weight: 200;
 }
 
-/* Error Container - Display Error Messages and Images */
 .errorContainer {
     display: none;
 }
 
 .errorContainer.active {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    color: var(--colorLight1);
+    gap: 1rem 0;
 }
 
 .errorContainer p {
